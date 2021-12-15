@@ -22,17 +22,46 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    const input = [{ integer: 1 }, { integer: 3 }, { integer: 2 }];
+    const actual = utils.findLargestInteger(input);
+    const expected = 3;
+    expect(actual).toEqual(expected);
+
+
+  })
 })
 
 describe('[Exercise 4] Counter', () => {
-  // let counter
-  // beforeEach(() => {
-  //   counter = new utils.Counter(3) // each test must start with a fresh couter
-  // })
-  // test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {})
-  // test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {})
-  // test('[8] the count eventually reaches zero but does not go below zero', () => {})
+  let counter
+  beforeEach(() => {
+    counter = new utils.Counter(3) // each test must start with a fresh couter
+  })
+  test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {
+    
+    const actual = new utils.Counter(3);
+    const expected = counter
+    
+    expect(actual).toMatchObject(expected);
+  })
+  test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
+    
+    const actual = (new utils.Counter(3)).countDown();
+    const expected = counter.countDown();
+    
+    expect(actual).toEqual(expected);
+  })
+  test('[8] the count eventually reaches zero but does not go below zero', () => {
+    const obj = (new utils.Counter(3))
+    obj.countDown();
+    obj.countDown()
+    obj.countDown();
+
+    const actual = obj;
+    const expected = (new utils.Counter(0));
+
+    expect(actual).toMatchObject(expected);
+  })
 })
 
 describe('[Exercise 5] Seasons', () => {

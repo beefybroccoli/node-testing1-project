@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "cross-env NODE_ENV=testing jest --verbose"
+    "test": "cross-env NODE_ENV=testing jest --verbose --watch",
+    "push": "git add . && git commit -m '...' && git push origin main"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
@@ -16,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/node-testing1-project.git"
+  },
+  "dependencies": {
+    "-": "^0.0.1"
   }
 }

@@ -65,15 +65,62 @@ describe('[Exercise 4] Counter', () => {
 })
 
 describe('[Exercise 5] Seasons', () => {
-  // let seasons
-  // beforeEach(() => {
-  //   seasons = new utils.Seasons() // each test must start with fresh seasons
-  // })
-  // test('[9] the FIRST call of seasons.next returns "summer"', () => {})
-  // test('[10] the SECOND call of seasons.next returns "fall"', () => {})
-  // test('[11] the THIRD call of seasons.next returns "winter"', () => {})
-  // test('[12] the FOURTH call of seasons.next returns "spring"', () => {})
-  // test('[13] the FIFTH call of seasons.next returns again "summer"', () => {})
+  let seasons
+  beforeEach(() => {
+    seasons = new utils.Seasons() // each test must start with fresh seasons
+  })
+  test('[9] the FIRST call of seasons.next returns "summer"', () => {
+
+    const actual = seasons.next();
+    const expected = 'summer';
+
+    expect(actual).toEqual(expected);
+  })
+  test('[10] the SECOND call of seasons.next returns "fall"', () => {
+    
+    let current;
+    for (let i = 1; i < 3; i++){
+      current = seasons.next();
+    }
+
+    const actual = current;
+    const expected = 'fall';
+
+    expect(actual).toEqual(expected);
+  })
+  test('[11] the THIRD call of seasons.next returns "winter"', () => {
+    let current;
+    for (let i = 1; i < 4; i++){
+      current = seasons.next();
+    }
+
+    const actual = current;
+    const expected = 'winter';
+
+    expect(actual).toEqual(expected);
+  })
+  test('[12] the FOURTH call of seasons.next returns "spring"', () => {
+    let current;
+    for (let i = 1; i < 5; i++){
+      current = seasons.next();
+    }
+
+    const actual = current;
+    const expected = 'spring';
+
+    expect(actual).toEqual(expected);
+  })
+  test('[13] the FIFTH call of seasons.next returns again "summer"', () => {
+    let current;
+    for (let i = 1; i < 6; i++){
+      current = seasons.next();
+    }
+
+    const actual = current;
+    const expected = 'summer';
+
+    expect(actual).toEqual(expected);
+  })
   // test('[14] the 40th call of seasons.next returns "spring"', () => {})
 })
 

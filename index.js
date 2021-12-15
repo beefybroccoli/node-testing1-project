@@ -49,7 +49,7 @@ class Counter {
    * @param {number} initialNumber - the initial state of the count
    */
   constructor(initialNumber) {
-    let count = initialNumber;
+    this.count = initialNumber;
   }
 
   /**
@@ -74,7 +74,8 @@ class Seasons {
    * [Exercise 5A] Seasons creates a seasons object
    */
   constructor() {
-    // ✨ initialize whatever properties are needed
+    this.index = 3;
+    this.array = ["summer", "fall", "winter", "spring"];
   }
 
   /**
@@ -90,7 +91,8 @@ class Seasons {
    * seasons.next() // returns "summer"
    */
   next() {
-    // ✨ implement
+    this.index = this.index === 3 ? 0 : this.index + 1;
+    return this.array[this.index];
   }
 }
 

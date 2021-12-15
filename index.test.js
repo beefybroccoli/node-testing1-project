@@ -8,8 +8,8 @@ describe('[Exercise 1] trimProperties', () => {
     expect(actual).toEqual(expected)
   })
   test('[2] returns a copy, leaving the original object intact', () => {
-    const input = { foo: 'foo', bar: 'bar', baz: 'baz' }
-    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
     const actual = {...input};
     expect(actual).toEqual(expected)
   })

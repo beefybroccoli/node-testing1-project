@@ -132,14 +132,41 @@ describe('[Exercise 5] Seasons', () => {
 })
 
 describe('[Exercise 6] Car', () => {
-  // let focus
-  // beforeEach(() => {
-  //   focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
-  // })
-  // test('[15] driving the car returns the updated odometer', () => {})
-  // test('[16] driving the car uses gas', () => {})
-  // test('[17] refueling allows to keep driving', () => {})
-  // test('[18] adding fuel to a full tank has no effect', () => {})
+  let focus
+  beforeEach(() => {
+    focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
+  })
+  test('[15] driving the car returns the updated odometer', () => {
+    const odometer = focus.drive(599);
+    
+    const actual = odometer;
+    const expected = 599;
+    expect(actual).toEqual(expected);
+  })
+  test('[16] driving the car uses gas', () => {
+    const odometer = focus.drive(300);
+    const tank = focus.refuel(0);
+    
+    const actual = tank;
+    const expected = 300;
+    expect(actual).toEqual(expected);
+  })
+  test('[17] refueling allows to keep driving', () => {
+    const odometer = focus.drive(300);
+    const tank = focus.refuel(5);
+    
+    const actual = tank;
+    const expected = 450;
+    expect(actual).toEqual(expected);
+  })
+  test('[18] adding fuel to a full tank has no effect', () => {
+    const odometer = focus.drive(300);
+    const tank = focus.refuel(10);
+    
+    const actual = tank;
+    const expected = 600;
+    expect(actual).toEqual(expected);
+  })
 })
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
